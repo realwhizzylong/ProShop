@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
-import PropTypes from 'prop-types'
 
 const Product = ({ product }) => {
     return (
@@ -30,16 +29,6 @@ const Product = ({ product }) => {
             </Card.Body>
         </Card>
     )
-}
-
-Rating.defaultProps = {
-    color: '#f8e825'
-}
-
-Rating.propTypes = {
-    value: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    color: PropTypes.string
 }
 
 export default Product;

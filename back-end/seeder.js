@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import products from './data/products.js';
 import users from './data/users.js';
@@ -22,8 +21,8 @@ const importData = async () => {
         const createdUsers = await User.insertMany(users);
         const adminUser = createdUsers[0];
         const sampleProducts = products.map(product => {
-            return { ...product, user: adminUser._id };
-        })
+            return { ...product, user: adminUser._id }
+        });
 
         await Product.insertMany(sampleProducts);
 
