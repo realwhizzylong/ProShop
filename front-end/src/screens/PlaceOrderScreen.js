@@ -20,7 +20,7 @@ const PlaceOrderScreen = ({ history }) => {
 
     useEffect(() => {
         if (success) {
-            history.push(`/order/${order._id}`);
+            history.push(`/order/${order._id}`)
         }
     }, [success, history])
 
@@ -45,6 +45,7 @@ const PlaceOrderScreen = ({ history }) => {
                             <p>
                                 <strong>Address: </strong>
                                 {shippingAddress.address},
+                                {' '}
                                 {shippingAddress.city},
                                 {' '}
                                 {shippingAddress.zipcode},

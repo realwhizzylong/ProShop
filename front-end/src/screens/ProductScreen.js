@@ -15,7 +15,7 @@ const ProductScreen = ({ match, history }) => {
     const { loading, product, error } = useSelector(state => state.productDetails);
 
     useEffect(() => {
-        dispatch(listProductDetails(match.params.id))
+        dispatch(listProductDetails(match.params.id));
     }, [dispatch, match])
 
     const addToCartHandler = () => {

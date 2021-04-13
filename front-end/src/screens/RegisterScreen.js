@@ -22,7 +22,7 @@ const RegisterScreen = ({ location, history }) => {
 
     useEffect(() => {
         if (userInfo) {
-            history.push(redirect)
+            history.push(redirect);
         }
     }, [userInfo, redirect, history])
 
