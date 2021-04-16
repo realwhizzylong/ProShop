@@ -42,7 +42,9 @@ const ProfileScreen = ({ history }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
+        if (password.length === 0) {
+            setMessage("Password cannot be empty")
+        } else if (password !== confirmPassword) {
             setMessage("Passwords do not match");
         } else {
             dispatch(updateUserProfile({ id: user._id, name, email, password }));
@@ -122,7 +124,7 @@ const ProfileScreen = ({ history }) => {
                                 <tr key={order._id}>
                                     <td>{order._id}</td>
                                     <td>{order.createdAt.substring(0, 10)}</td>
-                                    <td>{order.totalPrice}</td>
+                                    <td>${order.totalPrice}</td>
                                     <td>
                                         {order.isPaid ? (
                                             order.paidAt.substring(0, 10)
