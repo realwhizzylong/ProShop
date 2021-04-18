@@ -208,6 +208,7 @@ export const editUser = (user) => async (dispatch, getState) => {
         const { userLogin: { userInfo } } = getState();
         const config = {
             headers: {
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
